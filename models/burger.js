@@ -9,19 +9,19 @@ var orm = require("../config/orm.js");
 // Burger object and ORM functions.
 var burger = {
   	selectAll: function(tableInput, cb) {
-    	orm.all("burgers", function(res) {
+    	orm.selectAll("burgers", function(res) {
       	cb(res);
     	});
   	},
 
   	createOne: function(tableInput, burger_name, devoured, cb) {
-    	orm.create("burgers", burger_name, devoured, function(res) {
+    	orm.createOne("burgers", burger_name, devoured, function(res) {
       	cb(res);
     	});
   	},
 
   	updateOne: function(tableInput, devoured, burgerID, cb) {
-    	orm.update("burgers", devoured, burgerID, function(res) {
+    	orm.updateOne("burgers", devoured, burgerID, function(res) {
       	cb(res);
     	});
   	}
